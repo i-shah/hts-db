@@ -1,0 +1,6 @@
+{
+  "name": "hts-db",
+  "tagline": "Mongodb & Python system for storing, analyzing and visualizing high-throughput screening (HTS) data",
+  "body": "###Introduction\r\nThe hts-db is a simple but powerful system for storing and analyzing chemical-bioactivity assay data. The backend is a [mongodb](http://www.mongodb.com) NoSQL database with a python [mongoengine](http://mongoengine.org) object-oriented interface. All data analysis and visualization is handled in python using [Pandas](http://pandas.pydata.org), numpy, scipy and matplotlib. \r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
