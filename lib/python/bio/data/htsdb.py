@@ -3,7 +3,7 @@ from mongoengine import *
 from util.misc import *
 
 
-register_connection("hts-db","htsdb",host='localhost')
+register_connection("hts-db","htsdb",user='devr',passwd='devr',host='localhost')
 
 class HtsParam(EmbeddedDocument):
     meta=dict(db_alias="hts-db")
