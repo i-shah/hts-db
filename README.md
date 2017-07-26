@@ -37,7 +37,7 @@ unix> jupyter notebook
 ### Python source: Place the python source files in your PYTHONPATH. 
 
 # Loading MongoDB data
-MongoDB data have been provided under the data/mongodump directory and must be restored using the (mongorestore)[https://docs.mongodb.com/manual/reference/program/mongorestore/] tool (installed as part of the mongodb package). The following unix command loads the contents of the data/mongodump directory into the htsdb database (by user= user with password = passwd):-
+The data required for this analysis is available as a mongodump file and it must be downloaded via [ftp://newftp.epa.gov/comptox/Staff/ishah/htsdb_v1.tbz2](ftp).  Untar this file using the following commmand (will need bunzip2 decompression). Use the (mongorestore)[https://docs.mongodb.com/manual/reference/program/mongorestore/] tool (installed as part of the mongodb package) to recreate the htsdb database (by user= user with password = passwd):-
 
 ```
 unix> mongorestore -u user -p passwd -d htsdb --gzip mongodump 
