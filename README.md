@@ -17,7 +17,10 @@ Install the latest version of [mongodb](http://www.mongodb.com). MongoDB is a do
 This code has been tested on [Python 2.7](http://python.org). The easiest way to install Python 2.7 is via [Anaconda](https://www.continuum.io/downloads). Install the python packages given in py_requirements.txt as follows:
 
 ```
-unix> pip install -r py_requirements.txt
+#unix> pip install -r py_requirements.txt
+unix> pip install -r py_requirements_p1.txt
+unix> pip install -r py_requirements_p2.txt
+unix> pip install -r py_requirements_p3.txt
 ```
 
 ### Jupyter
@@ -35,12 +38,27 @@ unix> jupyter notebook
 ```
 
 ### Python source: Place the python source files in your PYTHONPATH. 
+In the `..../anaconda2/envs/htsdb/etc/conda/activate.d/env_vars.sh`
+add 
+```
+#! /bin/sh
+# .... is the full path dir of hts-db
+export PYTHONPATH=$PYTHONPATH:..../hts-db/lib/python
+``` 
+
+add 
+```
+#! /bin/sh
+unset PYTHONPATH
+``` 
+
+to deactivate.d/env_vars.sh
 
 # Loading MongoDB data
 The data required for this analysis is available as a mongodump file and it must be downloaded from [here](https://tinyurl.com/y8skjbds).  Untar this file using the following commmand (will need bunzip2 decompression). Use the [mongorestore](https://docs.mongodb.com/manual/reference/program/mongorestore/) tool (installed as part of the mongodb package) to recreate the htsdb database (by user= user with password = passwd):-
 
 ```
-unix> mongorestore -u user -p passwd -d htsdb --gzip mongodump 
+unix> mongorestore -u user -p passwd -d htsdb --gzip data/mongodump 
 ```
 
 
